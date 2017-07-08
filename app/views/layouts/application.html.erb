@@ -7,8 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<%if notice%>
+<script type="text/javascript">
+		noty({text:'<%=notice%>',layout:'topCenter',type:'information',theme:'defaultTheme'});
+	</script>
+<%end%>
+<% if alert%>
+<script type="text/javascript">
+		noty({text:'<%=alert%>',layout:'topCenter',type:'error'});
+</script>
+<%end%>
 <%= yield %>
 </body>
 </html>

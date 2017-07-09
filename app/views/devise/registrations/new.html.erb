@@ -1,25 +1,39 @@
-  <h2>Sign up</h2>
+<link rel="stylesheet" type="text/css" href="devise/signup.scss">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Francois+One" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<main>
+<div class="box">
+   <header id="logo">
+  Rogatio
+  </header>
+  <script type="text/javascript">
+       $('#logo').addClass('animated flipInY');
+  </script>
+<section>
+  <h3 id="heading">Sign up</h3>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages!%>
-  <div class="field">
-    <%= f.label :email %><br />
+   <div class="field2">
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
   </div>
-  <div class="field">
-    <%= f.label :username %><br />
+  <div class="field2">
+    <%= f.label :username %>
     <%= f.text_field :username, autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="field3">
     <%= f.label :password %>
+    <span>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <% end %>
+    <span>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
+  <div class="field2">
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
@@ -27,5 +41,9 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
+<footer>
 <%= render "devise/shared/links" %>
+</footer>
+</section>
+</div>
+</main>

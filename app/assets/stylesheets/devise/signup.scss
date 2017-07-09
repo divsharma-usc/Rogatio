@@ -1,14 +1,6 @@
-main{
-	width:1365px;
-	height:100vh;
-	background-image:image-url('devise/b.gif');
-	display:flex;
-	justify-content:center;
-	align-items:center;
-}
-div.boxlogin{
+div.box{
     width:400px;
-    height:350px;
+    height:450px;
     background-color:#ffffff;
     padding:20px;
     box-shadow: 0 8px 16px 0 #224687;
@@ -31,25 +23,31 @@ div.boxlogin{
        flex-direction:column;
        div{
            padding-top:5px;
-           padding-bottom:5px;
        }
-       
        input{
           width:380px;
           height:25px;
-          padding:4px;
           border:none;
           border-bottom:2px solid #2196F3;
        }
        input:-webkit-autofill {
          -webkit-box-shadow: 0 0 0px 1000px white inset;
        }
+       div.field3{
+           height:70px;
+           margin-top:6px;
+           display:flex;
+           flex-direction:column;
+           justify-content:space-between;
+
+       }
        div.field2{
-          width:15px;
+          height:50px;
           width:380px;
           display:flex;
-          align-items:center;
-          justify-content:flex-start;
+          flex-direction:column;
+          justify-content:center;
+          margin-top:6px;
        }
        input[type="checkbox"]{
            width:15px;
@@ -57,6 +55,7 @@ div.boxlogin{
            margin-right:10px;
        }
         input[type="submit"]{
+          margin-top:10px;
           border-radius:7px;
           width:380px;
           height:35px;
@@ -89,6 +88,3 @@ div.boxlogin{
       }
     }
  }
-#heading{
-           color: #1565C0;
-}

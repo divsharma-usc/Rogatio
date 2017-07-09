@@ -1,6 +1,14 @@
+main{
+	width:1365px;
+	height:100vh;
+	background-image:image-url('devise/b.gif');
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
 div.box{
     width:400px;
-    height:450px;
+    height: content;
     background-color:#ffffff;
     padding:20px;
     box-shadow: 0 8px 16px 0 #224687;
@@ -23,50 +31,37 @@ div.box{
        flex-direction:column;
        div{
            padding-top:5px;
+           padding-bottom:5px;
+           height: content;
        }
        input{
           width:380px;
           height:25px;
+          padding:4px;
           border:none;
           border-bottom:2px solid #2196F3;
        }
        input:-webkit-autofill {
          -webkit-box-shadow: 0 0 0px 1000px white inset;
        }
-       div.field3{
-           height:70px;
-           margin-top:6px;
-           display:flex;
-           flex-direction:column;
-           justify-content:space-between;
-
-       }
-       div.field2{
-          height:50px;
-          width:380px;
-          display:flex;
-          flex-direction:column;
-          justify-content:center;
-          margin-top:6px;
-       }
        input[type="checkbox"]{
-           width:15px;
-           height:15px;
+           width:12px;
+           height:12px;
            margin-right:10px;
+           margin-top: 10px;
        }
         input[type="submit"]{
-          margin-top:10px;
           border-radius:7px;
-          width:380px;
-          height:35px;
+          width:387px;
+          height:40px;
           font-size:1.2em;
           background-color: #2196F3;
           color:white;
        }
        input[type="submit"]:hover{
           border-radius:7px;
-          width:380px;
-          height:35px;
+          width:387px;
+          height:40px;
           background-color:#fff;
           font-size:1.2em;
           border:2px solid  #2196F3;
@@ -88,3 +83,18 @@ div.box{
       }
     }
  }
+#heading{
+       color: #1565C0;
+}
+#errors{
+       color: #F44336;
+       height: content;
+       width: 380px;
+       font-size: 0.8em;
+       h2{
+        display: none;
+       }
+       ul{
+        text-decoration: none;
+       }
+}

@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Francois+One" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 <main>
-<div class="boxpassword">
+<div class="box">
    <header id="logo">
   Rogatio
   </header>
@@ -13,11 +13,16 @@
 <section>
 <h4 id="heading">Forgot your password?</h4>
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <div class="field3">
+    <% if devise_error_messages!%>
+      <div id="errors">
+         <%= devise_error_messages!%>
+         <%= puts devise_error_messages!%>
+      </div>
+    <%end%>
+  <div class="field">
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
   </div>
-
   <div class="actions">
     <%= f.submit "Send me reset password instructions" %>
   </div>

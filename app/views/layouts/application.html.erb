@@ -5,9 +5,12 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Francois+One" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 <body>
+<div id="cover">
 <%if notice%>
 <script type="text/javascript">
 		noty({text:'<%=notice%>',layout:'topCenter',type:'information',theme:'defaultTheme'});
@@ -18,6 +21,23 @@
 		noty({text:'<%=alert%>',layout:'topCenter',type:'error'});
 </script>
 <%end%>
+<% if user_signed_in?%>
+<header id="mainheader">
+<section id="left"> 
+Rogatio
+</section>
+<section id="right">
+<nav>
+<ul>
+<li>
+<%=link_to "Sign out", destroy_user_session_path,method: :delete%>
+</li>
+</ul>
+</nav>
+</section>
+</header>
+<%end%>
 <%= yield %>
+</div>
 </body>
 </html>

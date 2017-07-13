@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resources :questions,only:[:create,:destroy]
   get 'home/index'
-
   get 'home/profile'
   post 'home/upload_image'=>'home#upload_image'
   devise_for :users

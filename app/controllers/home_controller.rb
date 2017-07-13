@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
-  def index
+  before_action :authenticate_user!
+  def index   
+        @question=Question.new
   end
   def profile
   end

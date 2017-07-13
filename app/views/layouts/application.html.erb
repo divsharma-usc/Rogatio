@@ -30,7 +30,15 @@ Rogatio
 <section id="right">
 <nav>
 <ul>
-     <li><button id="profile" class="profile"><%=current_user.username%></button>
+     <li><button id="profile" class="profile">
+     <span>
+     <%if current_user.profilepicture%>
+     <img src="/uploads/<%=current_user.profilepicture%>">
+     <%else%>
+     <img src="/uploads/profiledefault.png">
+     <%end%>
+     <%=current_user.username%></button>
+     </span>
      <div id="dropdown">
      <%=link_to "Profile",controller: :home,action: :profile,method: :get%>
      <%=link_to "Sign out", destroy_user_session_path,method: :delete%>

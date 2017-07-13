@@ -19,10 +19,12 @@
  }
  body{
     width:auto;
+    background-color:#fafafa;
  }
  #cover{
     width:auto;
     height:600px;
+    min-height:580px;
     min-width:1366px;
     display:flex;
     flex-direction:column;
@@ -37,6 +39,7 @@ header[id="mainheader"]{
         z-index: 800;
         font-size: 14px;
         color: #fff;
+        background-color:#fff;
         border-top: 2px solid #b92b27;
         border-bottom: 1px solid #ddd;
         border-left: 1px solid #ddd;
@@ -65,14 +68,20 @@ header[id="mainheader"]{
 }
 #profile{
    color:black; 
-   width:120px;
+   width:content;
    height:46px;
    background-color:#fff;
    border:none;
    padding:16px;
-   font-size:12px;
+   font-size:17px;
+   color:#a2a2a2;
    cursor:pointer;  
    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+   img{
+      width:20px;
+      height:20px;
+      border-radius:50%;
+   }
 }
 #profile:hover{
     background-color:#f6f6f6;
@@ -80,7 +89,7 @@ header[id="mainheader"]{
 #dropdown{
     position:absolute;
     top:55px;
-    width:130px;
+    width:120px;
     height:content;
     display:inline-block;
     display:none;

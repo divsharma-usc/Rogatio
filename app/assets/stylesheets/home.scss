@@ -27,3 +27,58 @@
 	     }
 	}
 }
+#createQuestion{
+	width:600px;
+	height:110px;
+	border:1px solid #efefef;
+	border-radius:5px;
+	top:80px;
+	left:400px;
+	position:absolute;
+	background-color:#fff;
+	img{
+	   width:20px;
+	   height:20px;
+	   border-radius:50%;
+	   border:1px solid #efefef;
+	}
+	div[id="questionhead"]{
+	display:flex;
+	justify-content:flex-start;
+	top:7px;
+	color:#999;
+	padding:8px;
+	     h5{   margin-left:10px;
+	           font-size:17px;
+	           font-weight: 400;
+               font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	       }
+	}
+	form{
+	       padding-left:10px;
+	       textarea[id="question_question"]{
+	           border:none;
+	           width:550px;
+	           height:15px;
+	           padding:5px;
+	           color:black;
+	           border-bottom:2px solid #efefef;
+	       }
+	       input[type=submit]{
+	          margin-top:8px;
+	          color:#999;
+	          border:none;
+	          width:70px;
+	          height: 24px;
+	          border-radius:5px;
+	          background-color:#ececec;
+	          font-weight: 400;
+              font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	          cursor:pointer;
+	       }
+	       input[type=submit]:hover{
+	          background-color:#dfeffa;;
+	         
+	       }
+	}
+}

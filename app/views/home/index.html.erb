@@ -1,0 +1,20 @@
+<main>
+<aside>
+</aside>
+<div class="createQuestion" id="createQuestion">
+<div id="questionhead">
+<%if current_user.profilepicture%>
+<img src="/uploads/<%=current_user.profilepicture%>">
+<%else%>
+<img src="/uploads/profiledefault.png">
+<%end%>
+<h5><%=current_user.username%></h5>
+</div>
+<%=form_for @question,remote:true do |f|%>
+<%=f.text_area :question, placehodler:"What is yours question"%><br>
+<div class="action">
+<%=f.submit id:'create_question_submit',value:"Add"%>
+</div>
+<%end%>
+</div>
+</main>

@@ -1,0 +1,5 @@
+<% if @follow%>
+$('#follow_<%=@followee.id%>').html("Unfollow");
+<%else%>
+$('#follow_<%=@followee.id%>').html("Follow");
+<%end%>

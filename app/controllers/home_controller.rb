@@ -21,20 +21,17 @@ class HomeController < ApplicationController
   end
   def follow
     followee_id=params[:followee_id]
+    followee_id=followee_id.to_i
+    @followee=User.where(:id=>followee_id).first
+    @follow=current_user.can_follow followee_id
     if current_user.can_follow followee_id
         CreateFollowMapping.create(:followee_id=>followee_id,:follower_id=>current_user.id)
-    else
-    end
-    return redirect_to '/user'
-  end
-  def unfollow
-    followee_id=params[:followee_id]
-    if current_user.can_un_follow followee_id
+    elsif followee_id != current_user.id
         mapping=CreateFollowMapping.where(:followee_id=>followee_id,:follower_id=>current_user.id).first
-        mapping.destroy;
-    else
+        mapping.destroy!
     end
-    return redirect_to '/user'
+     respond_to do |format|
+       format.js{ }
+     end
   end
 end
-

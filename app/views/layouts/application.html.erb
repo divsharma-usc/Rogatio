@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Francois+One" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
 <div id="cover">
@@ -29,9 +30,35 @@ Rogatio
 <section id="right">
 <nav>
 <ul>
-<li>
-<%=link_to "Sign out", destroy_user_session_path,method: :delete%>
-</li>
+     <li><button id="profile" class="profile"><%=current_user.username%></button>
+     <div id="dropdown">
+     <%=link_to "Profile",controller: :home,action: :profile,method: :get%>
+     <%=link_to "Sign out", destroy_user_session_path,method: :delete%>
+          
+     </div>
+     <script type="text/javascript">
+
+          $('#profile').click(function(event){
+                this.style["background-color"]="#f6f6f6";
+                var openDropdown=document.getElementById("dropdown");
+                if (openDropdown.style.display=="none"||openDropdown.style.display==""){
+                   openDropdown.style.display="block";
+                }
+                else{
+                    openDropdown.style.display="none";
+                    this.style["background-color"]="#fff"
+                }
+           });
+         $(window).click(function(event){
+             if(event.target.id!='profile'){
+               var openDropdown=document.getElementById("dropdown");
+                if(openDropdown.style.display=='block')
+                    openDropdown.style.display="none";
+                    $('#profile').css("background-color","#fff");
+                
+             }
+         });
+ </script>
 </ul>
 </nav>
 </section>
@@ -40,4 +67,5 @@ Rogatio
 <%= yield %>
 </div>
 </body>
+
 </html>

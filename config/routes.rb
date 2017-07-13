@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
+  get 'home/profile'
+  post 'home/upload_image'=>'home#upload_image'
   devise_for :users
   get 'home/index'
 

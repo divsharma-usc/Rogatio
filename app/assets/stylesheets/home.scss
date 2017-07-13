@@ -1,3 +1,29 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#top{
+	width:970px;
+	height:160px;
+	display:flex;
+	justify-content:flex-start;
+	border-bottom:2px solid #e2e2e2;
+	div[id="left"]{
+	     width:170px;
+	     img{
+	        border-radius:50%;
+	        width:142px;
+	        height:142px;
+	        margin-top:6px;
+	        border:1px solid #e2e2e2;
+	     }
+	}
+	div[id="right"]{
+	     flex-grow:1;
+	     padding:10px;
+	     font-family:'q_serif',Georgia,Times,"Times New Roman",serif;
+	     h5{
+	        color:#9c9c9c;
+	        padding-top:7px;
+	     }
+	}
+}

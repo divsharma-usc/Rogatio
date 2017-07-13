@@ -16,5 +16,25 @@ class HomeController < ApplicationController
   	current_user.save!
   	return redirect_to '/home/profile'
   end
+  def user
+    @users=User.all
+  end
+  def follow
+    followee_id=params[:followee_id]
+    if current_user.can_follow followee_id
+        CreateFollowMapping.create(:followee_id=>followee_id,:follower_id=>current_user.id)
+    else
+    end
+    return redirect_to '/user'
+  end
+  def unfollow
+    followee_id=params[:followee_id]
+    if current_user.can_un_follow followee_id
+        mapping=CreateFollowMapping.where(:followee_id=>followee_id,:follower_id=>current_user.id).first
+        mapping.destroy;
+    else
+    end
+    return redirect_to '/user'
+  end
 end
 

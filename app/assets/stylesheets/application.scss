@@ -57,12 +57,29 @@ header[id="mainheader"]{
         }
         section[id="right"]{
            nav{
-               ul{
+               ul{   display:flex;
+
                    li{   min-height:45px;
-                         text-decoration:none;
+                         width:content;
+                         min-width:80px;
+                         padding-right:10px;
                          display:flex;
                          align-items:center;
+                         justify-content:center;
+                         font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                         cursor:pointer;
+                         a{
+                            text-decoration:none;
+                            font-size:17px;
+                            color:#a2a2a2;
+                         }
+                         a:hover{
+                            background-color:#f6f6f6;
+                         }
                      }
+                    li:hover{
+                         background-color:#f6f6f6;
+                    }
                  }
             }
             padding-right:100px;

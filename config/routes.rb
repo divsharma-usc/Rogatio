@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   post 'home/upload_image'=>'home#upload_image'
   devise_for :users
   get 'home/index'
-
+  get '/user'=>"home#user"
+  post '/follow'=>'home#follow'
+  post '/unfollow'=>'home#unfollow'
   root to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

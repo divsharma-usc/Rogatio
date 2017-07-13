@@ -82,3 +82,48 @@
 	       }
 	}
 }
+#users{
+	 background-color:#fff;
+	 width:600px;
+	 height:80px;
+	 border-radius:7px;
+	 margin-top:10px;
+	 padding:16px;
+	 border:1px solid #efefef;
+	 display:flex;
+	 div[id="users_left"]{
+	     width:80px;
+	     height:69px;
+	     img{
+               width:60px;
+               height:60px;
+               border-radius:50%;
+	     }
+	    
+	 }
+	 div[id="users_right"]{
+	      
+	      h4{
+	           margin-top:6px;
+	      }
+	      div[id="followbutton"]{
+	           margin-top:6px;
+	         a{  font-size:13px;
+	             font-weight: 400;
+                 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	             text-decoration:none;
+	             background-color:#f1f8fb;
+	             padding:2px;
+	             border-radius:2px;
+	             padding-left:10px;
+	             padding-right:10px;
+	             border:1px solid #efefef;
+	             color:#2b6dad;
+	         }
+	         a:hover{
+	            border:1px solid #2b6dad;
+	           
+	         }
+	      }
+	 }
+}

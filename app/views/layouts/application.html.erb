@@ -29,7 +29,8 @@ Rogatio
 </section>
 <section id="right">
 <nav>
-<ul>
+<ul id="links">
+     <li><%= link_to "Users",user_path%></li>
      <li><button id="profile" class="profile">
      <%if current_user.profilepicture%>
      <img src="/uploads/<%=current_user.profilepicture%>">

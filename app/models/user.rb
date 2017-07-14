@@ -25,5 +25,4 @@ class User < ActiveRecord::Base
      FOLLOWED = 1
      NOTFOLLOWED = 2
    end
- 
 end

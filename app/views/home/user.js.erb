@@ -1,0 +1,9 @@
+<%@feed.each do |user|%>
+$('#usercover').append("<%= escape_javascript (render 'userbloc',user: user)%>");
+<%end%>
+window.offset=<%=@newoffset%>;
+window.load_more_active = false;
+
+
+
+

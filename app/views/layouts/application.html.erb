@@ -11,7 +11,6 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
-<div id="cover">
 <%if notice%>
 <script type="text/javascript">
 		noty({text:'<%=notice%>',layout:'topCenter',type:'information',theme:'defaultTheme'});
@@ -25,7 +24,7 @@
 <% if user_signed_in?%>
 <header id="mainheader">
 <section id="left"> 
-Rogatio
+<a href="/">Rogatio</a>
 </section>
 <section id="right">
 <nav>
@@ -70,9 +69,12 @@ Rogatio
 </nav>
 </section>
 </header>
-<%end%>
+<div id="mainsection">
 <%= yield %>
 </div>
+<%else%>
+<%= yield %>
+<%end%>
 </body>
 
 </html>

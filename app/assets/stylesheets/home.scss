@@ -27,13 +27,14 @@
 	     }
 	}
 }
+
 #createQuestion{
 	width:600px;
 	height:110px;
 	border:1px solid #efefef;
 	border-radius:5px;
-	top:80px;
-	left:400px;
+	top:20px;
+	left:250px;
 	position:absolute;
 	background-color:#fff;
 	img{
@@ -82,15 +83,18 @@
 	       }
 	}
 }
-#users{
+#usercover{
+ width:510px;
+ #users{
 	 background-color:#fff;
-	 width:600px;
+	 width:500px;
 	 height:80px;
 	 border-radius:7px;
-	 margin-top:10px;
-	 padding:16px;
+	 margin-top:8px;
+	 padding:15px;
 	 border:1px solid #efefef;
 	 display:flex;
+	 position:relative;
 	 div[id="users_left"]{
 	     width:80px;
 	     height:69px;
@@ -126,4 +130,5 @@
 	         }
 	      }
 	 }
+}
 }

@@ -17,7 +17,21 @@ class HomeController < ApplicationController
   	return redirect_to '/home/profile'
   end
   def user
-    @users=User.all
+    respond_to do |format|
+    format.html{
+      @feed=User.all.limit(10)
+    }
+    format.js{
+      offset=params[:offset]
+      if offset
+         offset=offset.to_i
+      else
+         offset=0
+      end
+      @newoffset=offset+10
+      @feed=User.all.offset(offset).limit(10)
+    }
+    end
   end
   def follow
     followee_id=params[:followee_id]

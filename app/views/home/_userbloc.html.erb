@@ -1,0 +1,21 @@
+<div id="users">
+   <div id="users_left">
+   <%if user.profilepicture%>
+   <img src="/uploads/<%=user.profilepicture%>">
+   <%else%>
+   <img src="/uploads/profiledefault.png">
+   <%end%>
+   </div>
+   <div id="users_right">
+   <h2><%= user.username%></h2>
+   <h4> <%=user.email%></h4>
+   <div id="followbutton">
+    <% if current_user.can_follow user.id%>
+<%= link_to "Follow", url_for(controller: :home,action: :follow,followee_id: user.id),method: :post,remote: true,id: "follow_#{user.id}"%>
+<%end%>
+<% if current_user.can_un_follow user.id%>
+<%= link_to "Unfollow", url_for(controller: :home,action: :follow,followee_id: user.id),method: :post,remote: true,id:"follow_#{user.id}"%>
+<%end%>
+</div>
+</div>
+</div>

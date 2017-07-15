@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem 'devise'
-
+gem 'trix'
+gem 'font-awesome-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record

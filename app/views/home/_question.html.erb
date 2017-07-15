@@ -1,4 +1,4 @@
-<section id="question">
+<section class="question" id="question<%=question.id%>">
 	<span><%=question.question%></span>
 	<div id="questionuser">
 	   <%if question.user.profilepicture%>
@@ -10,4 +10,10 @@
 	   <%=question.user.username%>
 	   </span>
 	</div>
+	<div id="lower">
+	   	<%=link_to "Answer",controller: :answers,action: :ans,method: :post,remote: true,question: question.id,id: question.id%>
+	</div>
 </section>
+<script type="text/javascript">
+
+</script>

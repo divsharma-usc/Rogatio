@@ -1,0 +1,54 @@
+// Place all the styles related to the answers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#answer{
+    margin-top:20px;
+	width:480px;
+	button[type="button"]{
+	  width:25px;
+	  height:25px;
+	}
+	#header{
+	  width:460px;
+	  display:flex;
+	  background-color:#f6f6f6;
+	  padding:10px;
+	  border:1px solid #e2e2e2;
+	  border-radius:3px;
+	  img{
+	     width:22px;
+	     height:22px;
+	     border-radius:50%;
+	  }
+	  p{
+	     margin-left:8px;
+	     font-family: 'q_serif',Georgia,Times,"Times New Roman",serif;
+	     font-size:13px;
+	  }
+	}
+	form{
+	   border:1px solid #e2e2e2;
+	   border-radius:3px;
+	   trix-editor{
+	      margin-top:-9px;
+          min-height:150px;
+	   }
+	   div[class="actions"]{
+	   background-color:#f6f6f6;
+	   margin-bottom:0px;
+	   padding:5px;
+	   }
+	   #create{
+	     background: #3e78ad;
+         color: #fff;
+         border: 1px solid #3a66ad;
+         box-shadow: 0 1px 1px 0 rgba(200,200,200,0.6);
+         border-radius: 3px;   
+         display: inline-block;
+         font-weight: 500;
+         outline: 0;
+         padding: 3px 7px 4px 7px;
+         text-align: center;
+	   }
+	}
+}

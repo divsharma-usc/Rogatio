@@ -1,0 +1,2 @@
+var questionid="#question"+<%=@questionid%>
+$(questionid).append("<%= escape_javascript (render 'newans',questionid: @questionid)%>");

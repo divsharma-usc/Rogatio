@@ -1,0 +1,17 @@
+<div id="answer">
+<section id="header">
+  <% if current_user.profilepicture%>
+  <img src="/uploads/<%=current_user.profilepicture%>">
+  <%else%>
+  <img src="/uploads/profiledefault.png">
+  <%end%>
+  <p> <%= current_user.username%></p>
+</section>
+<%= form_for @answer=Answer.new do |f|%>
+<%@answer.question_id=params["questionid"].to_i %>
+<%=f.trix_editor :ans%>
+<div class="actions">
+<%= f.submit id:"create",value:"Submit"%>
+</div>
+<%end%>
+</div>

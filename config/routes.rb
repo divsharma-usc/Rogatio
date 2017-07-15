@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :answers,only:[:create,:destroy,:ans]
+  get 'answers/ans'
   resources :questions,only:[:create,:destroy]
   get 'home/index'
   get 'home/profile'

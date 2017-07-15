@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   validates :username, presence: true
+  has_many :questions
   def follow_relation user_id
      return UserRelations::SELF if id == user_id
      if CreateFollowMapping.where(:followee_id => user_id, :follower_id => id).length > 0

@@ -1,0 +1,5 @@
+<%@feed.each do |question|%>
+$('#newquestions').append("<%= escape_javascript (render 'question',question: question)%>");
+<%end%>
+window.question_offset=<%=@newoffset%>;
+window.question_load_more_active = false;

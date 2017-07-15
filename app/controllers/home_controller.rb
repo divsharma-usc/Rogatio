@@ -48,4 +48,21 @@ class HomeController < ApplicationController
        format.js{ }
      end
   end
+  def newquestions
+   respond_to do |format|
+    format.html{
+     @question=Question.all.order(updated_at: :DESC).limit(10)
+    }
+    format.js{
+      offset=params[:offset]
+      if offset
+         offset=offset.to_i
+      else
+         offset=0
+      end
+      @newoffset=offset+10
+      @feed= @question=Question.all.order(updated_at: :DESC).offset(offset).limit(10)
+    }
+  end
+end
 end

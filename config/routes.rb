@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/user'=>"home#user"
   post '/follow'=>'home#follow'
   post '/unfollow'=>'home#unfollow'
+  get '/newquestions'=>'home#newquestions'
   root to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

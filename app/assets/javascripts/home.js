@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    console.log('hello')
 	window.load_more_active=false;
 	window.offset=10;
 	document.addEventListener('scroll',function(event){

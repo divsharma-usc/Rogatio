@@ -1,0 +1,13 @@
+<section id="question">
+	<span><%=question.question%></span>
+	<div id="questionuser">
+	   <%if question.user.profilepicture%>
+	   <img src="/uploads/<%=question.user.profilepicture%>">
+	   <%else%>
+	   <img src="/uploads/profiledefault.png">
+	   <%end%>
+	   <span>
+	   <%=question.user.username%>
+	   </span>
+	</div>
+</section>

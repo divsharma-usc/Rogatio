@@ -9,19 +9,19 @@
 	   <span>
 	   <%=question.user.username%>
 	   </span>
+	   <span id="time">
+	   <%= time_ago_in_words(question.created_at) %>
+	   </span>
 	</div>
 	<div id="lower">
 	   	<%= link_to "Answer",controller: :answers,action: :ans,question: question.id,method: :post,remote: true,id: question.id%>
 	   	<% if Upvote.where(upvoteable_id:question.id,upvoteable_type:"question",user_id:current_user.id).length>0%>
-	   	  	   	<%= link_to "DownVote", url_for(controller: :upvote,action: :upvote,question: question.id),    method: :post,remote: true,id: "button_#{question.id}"%>
+	   	<%= link_to "DownVote | "+Upvote.where(upvoteable_id:question.id,upvoteable_type:"question").length.to_s, url_for(controller: :upvote,action: :upvote,question: question.id),    method: :post,remote: true,id: "button_#{question.id}"%>
 	   	<%else%>
-	   	<%= link_to "Upvote", url_for(controller: :upvote,action: :upvote,question: question.id),    method: :post,remote: true,id: "button_#{question.id}"%>
+	   	<%= link_to "Upvote | "+Upvote.where(upvoteable_id:question.id,upvoteable_type:"question").length.to_s, url_for(controller: :upvote,action: :upvote,question: question.id),    method: :post,remote: true,id: "button_#{question.id}"%>
 	   	<%end%>
-        <span id="upvote_<%=question.id%>">
-	   	<%= Upvote.where(upvoteable_id:question.id,upvoteable_type:"question").length%>
-	   	</span>
-	   	  <span id="answer_count">
-	   	  <%= link_to Answer.where(question_id:question.id).length.to_s+" Answers",url_for(controller: :answers,action: :answers_show,question_id:question.id)%>
+   	   	 <span id="answer_count">
+	   	<%= link_to Answer.where(question_id:question.id).length.to_s+" Answers",url_for(controller: :answers,action: :answers_show,question_id:question.id)%>
 	   	</span>
 	</div>
 </section>

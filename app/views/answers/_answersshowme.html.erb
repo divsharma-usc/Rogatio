@@ -11,6 +11,9 @@
 	   <span>
 	   <%=user.username%>
 	   </span>
+	   <span id="time">
+	   <%= " "+time_ago_in_words(answer.created_at)+" ago" %>
+	   </span>
    </div>
 <section id="answer_text">
 <%=answer.ans.html_safe%>

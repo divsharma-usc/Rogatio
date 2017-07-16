@@ -1,3 +1,11 @@
+<div id="mainsectionanswer">
+<aside id="feed">
+<p>Feeds</p>
+<div id="bottom border"></div>
+<%= link_to "Top Stories"%>
+<%= link_to "New Questions",controller: :home,action: :newquestions%>
+<%= link_to "Top Rated Questions"%>
+</aside>
 <%question=Question.where(id:@answers[0].question_id).first%>
 <section class="question">
 <span><%=question.question%></span>
@@ -10,6 +18,9 @@
 	   <span>
 	   <%=question.user.username%>
 	   </span>
+	   <span id="time">
+	   <%= " "+time_ago_in_words(question.created_at)+" ago" %>
+	   </span>
 </div>
 </section>
 <%i=1%>
@@ -17,3 +28,4 @@
       <%= render 'answersshowme', answer: answer,i: i%>
       <%i=i+1%>
 <%end%>
+</div>

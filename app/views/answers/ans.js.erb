@@ -1,5 +1,4 @@
 var questionid="#question"+<%=@questionid%>
 var buttonid="#button_"+<%=@questionid%>
-console.log($(buttonid))
 $(buttonid).unbind('click',false);
 $(questionid).append("<%= escape_javascript (render 'newans',questionid: @questionid)%>");

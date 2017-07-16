@@ -1,12 +1,9 @@
-console.log("working")
 var el="#button_"+<%=@question_id%>
-var el2="#upvote_"+<%=@question_id%>
+console.log(el);
 <% if @is_upvoted %>
- $(el).html("Downvote");
- noty({text: 'Question upvoted', type: 'alert'});
+ $(el).html("Downvote | "+<%=Upvote.where(upvoteable_id:@question_id,upvoteable_type:"question").length.to_s%>);
+ noty({text: 'Question upvoted', type: 'alert'})
  <% else %>
- $(el).html("Upvote");
+ $(el).html("Upvote | "+<%=Upvote.where(upvoteable_id:@question_id,upvoteable_type:"question").length.to_s%>);
  noty({text: 'Tweet downvoted', type: 'alert'});
  <% end %> 
- var count=<%=Upvote.where(upvoteable_id:@question_id,upvoteable_type:"question").length%>
- $(el2).html(count)

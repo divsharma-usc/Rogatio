@@ -183,3 +183,21 @@
         }
 
   }
+  #mainsectionanswer{
+   display:flex;
+   position:absolute;
+   top:0px;
+   width:1100px;
+   min-height:540px;
+   height:content;
+   align-items:center;
+   flex-direction:column;
+   #time{
+                line-height: 1.4;
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 13px;
+                color:#999;
+                padding-top:2px;
+                padding-left:2px;
+    }
+}

@@ -1,0 +1,11 @@
+var el="#button_"+<%=@answer_id%>
+var el2="#upvote_"+<%=@answer_id%>
+<% if @is_upvoted %>
+ $(el).html("Downvote");
+ noty({text: 'Answer upvoted', type: 'alert'});
+ <% else %>
+ $(el).html("Upvote");
+ noty({text: 'Answer downvoted', type: 'alert'});
+ <% end %> 
+ var count=<%=Upvote.where(upvoteable_id:@answer_id,upvoteable_type:"answer").length%>
+ $(el2).html(count)

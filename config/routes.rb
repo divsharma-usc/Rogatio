@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/newquestions'=>'home#newquestions'
   post '/answers/ans'=>'answers#ans'
   post '/upvote/upvote'=>'upvote#upvote'
+  post '/upvote/upvote_answer'=>'upvote#upvote_answer'
   get '/answers/answers_show'=>'answers#answers_show'
   root to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.

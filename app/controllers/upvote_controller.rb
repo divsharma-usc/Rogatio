@@ -15,4 +15,19 @@ class UpvoteController<ApplicationController
 	    }
 	    end
 	end
+	def upvote_answer
+		 @upvote=Upvote.where(upvoteable_id:Answer.find(params[:answer]).id,user_id:current_user.id,upvoteable_type:"answer").first
+		 if @upvote
+			 @upvote.destroy!
+			 @is_upvoted=false
+	     else
+	    	 Upvote.create(upvoteable_id:Answer.find(params[:answer]).id,user_id:current_user.id,upvoteable_type:"answer")
+	    	 @is_upvoted=true
+	    end
+	    @answer_id=params[:answer].to_i
+		respond_to do |format|
+		format.js{
+	    }
+	    end
+	end
 end

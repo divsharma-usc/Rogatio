@@ -1,5 +1,7 @@
 <div id="answercover">
-<div id="header">
+   Answer <%=i%>
+   <div id="bar"></div>
+   <div id="header">
  <% user=User.where(id:answer.user_id).first%>
  <%if user.profilepicture%>
 	   <img src="/uploads/<%=answer.user.profilepicture%>">
@@ -9,6 +11,19 @@
 	   <span>
 	   <%=user.username%>
 	   </span>
-</div>
+   </div>
+<section id="answer_text">
 <%=answer.ans.html_safe%>
+</section>
+<div id="bar"></div>
+<section id="footer">
+	   	<% if Upvote.where(upvoteable_id:answer.id,upvoteable_type:"answer",user_id:current_user.id).length>0%>
+	   	<%= link_to "DownVote", url_for(controller: :upvote,action: :upvote_answer,answer: answer.id),    method: :post,remote: true,id: "button_#{answer.id}"%>
+	   	<%else%>
+	   	<%= link_to "Upvote", url_for(controller: :upvote,action: :upvote_answer,answer: answer.id),    method: :post,remote: true,id: "button_#{answer.id}"%>
+	   	<%end%>
+        <span id="upvote_<%=answer.id%>">
+	   	<%= Upvote.where(upvoteable_id:answer.id,upvoteable_type:"answer").length%>
+	   	</span>
+</section>
 </div>

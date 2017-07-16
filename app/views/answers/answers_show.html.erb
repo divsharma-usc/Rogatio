@@ -12,6 +12,8 @@
 	   </span>
 </div>
 </section>
+<%i=1%>
 <%@answers.each do |answer|%>
-   <%= render 'answersshowme', answer: answer%>
+      <%= render 'answersshowme', answer: answer,i: i%>
+      <%i=i+1%>
 <%end%>

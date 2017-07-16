@@ -8,7 +8,8 @@
   <p> <%= current_user.username%></p>
 </section>
 <%= form_for @answer=Answer.new do |f|%>
-<%@answer.question_id=params["questionid"].to_i %>
+<%=f.hidden_field :question_id,value:questionid %>
+<%=f.hidden_field :user_id, value: current_user.id.to_s %>
 <%=f.trix_editor :ans%>
 <div class="actions">
 <%= f.submit id:"create",value:"Submit"%>

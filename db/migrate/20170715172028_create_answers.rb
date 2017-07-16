@@ -3,7 +3,6 @@ class CreateAnswers < ActiveRecord::Migration
     create_table :answers do |t|
       t.text :ans
       t.references :question, index: true, foreign_key: true
-
       t.timestamps null: false
     end
   end

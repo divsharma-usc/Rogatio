@@ -1,0 +1,14 @@
+<div id="answercover">
+<div id="header">
+ <% user=User.where(id:answer.user_id).first%>
+ <%if user.profilepicture%>
+	   <img src="/uploads/<%=answer.user.profilepicture%>">
+	   <%else%>
+	   <img src="/uploads/profiledefault.png">
+	   <%end%>
+	   <span>
+	   <%=user.username%>
+	   </span>
+</div>
+<%=answer.ans.html_safe%>
+</div>

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   validates :username, presence: true
   has_many :questions
+  has_many :answers
   def follow_relation user_id
      return UserRelations::SELF if id == user_id
      if CreateFollowMapping.where(:followee_id => user_id, :follower_id => id).length > 0

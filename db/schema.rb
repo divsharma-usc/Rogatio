@@ -11,16 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170715173012) do
+ActiveRecord::Schema.define(version: 20170716095214) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "ans"
     t.integer  "question_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
 
   add_index "answers", ["question_id"], name: "index_answers_on_question_id"
+  add_index "answers", ["user_id"], name: "index_answers_on_user_id"
 
   create_table "create_follow_mappings", force: :cascade do |t|
     t.integer  "follower_id"
@@ -37,6 +39,18 @@ ActiveRecord::Schema.define(version: 20170715173012) do
   end
 
   add_index "questions", ["user_id"], name: "index_questions_on_user_id"
+
+  create_table "upvotes", force: :cascade do |t|
+    t.integer  "count"
+    t.integer  "upvoteable_id"
+    t.string   "upvoteable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "user_id"
+  end
+
+  add_index "upvotes", ["upvoteable_type", "upvoteable_id"], name: "index_upvotes_on_upvoteable_type_and_upvoteable_id"
+  add_index "upvotes", ["user_id"], name: "index_upvotes_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -21,12 +21,9 @@
 <div id="bar"></div>
 <section id="footer">
 	   	<% if Upvote.where(upvoteable_id:answer.id,upvoteable_type:"answer",user_id:current_user.id).length>0%>
-	   	<%= link_to "DownVote", url_for(controller: :upvote,action: :upvote_answer,answer: answer.id),    method: :post,remote: true,id: "button_#{answer.id}"%>
+	   	<%= link_to "DownVote | "+Upvote.where(upvoteable_id:answer.id,upvoteable_type:"answer").length.to_s, url_for(controller: :upvote,action: :upvote_answer,answer: answer.id),    method: :post,remote: true,id: "button_#{answer.id}"%>
 	   	<%else%>
-	   	<%= link_to "Upvote", url_for(controller: :upvote,action: :upvote_answer,answer: answer.id),    method: :post,remote: true,id: "button_#{answer.id}"%>
+	   	<%= link_to "Upvote | "+Upvote.where(upvoteable_id:answer.id,upvoteable_type:"answer").length.to_s, url_for(controller: :upvote,action: :upvote_answer,answer: answer.id),    method: :post,remote: true,id: "button_#{answer.id}"%>
 	   	<%end%>
-        <span id="upvote_<%=answer.id%>">
-	   	<%= Upvote.where(upvoteable_id:answer.id,upvoteable_type:"answer").length%>
-	   	</span>
-</section>
+        </section>
 </div>

@@ -5,17 +5,14 @@
 <%= link_to "New Questions",controller: :home,action: :newquestions%>
 <%= link_to "Top Rated Questions"%>
 </aside>
-
-<div id="newquestions">
-<% @question.each do | question|%>
-<%=render 'question',question:question%>
+<div id="topstories">
+<% @topstories.each do | story|%>
+<%=render 'stories',answer:story%>
 <% end%>
-</div>
 <script type="text/javascript">
 	$(document).ready(function(){
-    console.log('question')
 	window.question_load_more_active=false;
-	window.question_offset=10;
+	window.question_offset=5;
 	document.addEventListener('scroll',function(event){
 	   bh = document.body.offsetHeight;
        wh = $(window).height();
@@ -26,7 +23,7 @@
 	         	 console.log('question')
 	         	 console.log("sending ajax request")
 	             $.ajax({
-	                  url:'/newquestions',
+	                  url:'/topstories',
 	                  type:'GET',
 	                  dataType:'script',
 	                  data:{

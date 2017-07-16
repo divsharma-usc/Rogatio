@@ -1,0 +1,35 @@
+<div id="storycover">
+      <div id="question">
+          <%=answer.question.question%>
+      </div>
+      <div id="header">
+ <% user=User.where(id:answer.user_id).first%>
+ <%if user.profilepicture%>
+	   <img src="/uploads/<%=answer.user.profilepicture%>">
+	   <%else%>
+	   <img src="/uploads/profiledefault.png">
+	   <%end%>
+	   <span>
+	   <%=user.username%>
+	   </span>
+	   <span id="time">
+	   <%= " "+time_ago_in_words(answer.created_at)+" ago" %>
+	   </span>
+    </div>
+    <div id="title_answer">
+     Answer <%=answer.upvotecount.to_s+" "%> upvotes
+    </div>
+   <div id="bar">
+   </div>
+<section id="answer_text">
+<%=answer.ans.html_safe%>
+</section>
+<div id="bar"></div>
+<section id="footer">
+	   	<% if Upvote.where(upvoteable_id:answer.id,upvoteable_type:"answer",user_id:current_user.id).length>0%>
+	   	<%= link_to "DownVote | "+answer.upvotecount.to_s, url_for(controller: :upvote,action: :upvote_answer,answer: answer.id),    method: :post,remote: true,id: "button_#{answer.id}"%>
+	   	<%else%>
+	   	<%= link_to "Upvote | "+answer.upvote.count.to_s, url_for(controller: :upvote,action: :upvote_answer,answer: answer.id),    method: :post,remote: true,id: "button_#{answer.id}"%>
+	   	<%end%>
+ </section>
+</div>

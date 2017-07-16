@@ -1,0 +1,5 @@
+<%@feed.each do |story|%>
+$('#topstories').append("<%= escape_javascript (render 'story',story: story)%>");
+<%end%>
+window.question_offset=<%=@newoffset%>;
+window.question_load_more_active = false;

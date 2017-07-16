@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post '/follow'=>'home#follow'
   post '/unfollow'=>'home#unfollow'
   get '/newquestions'=>'home#newquestions'
+  get '/topstories'=>'home#topstories'
   post '/answers/ans'=>'answers#ans'
   post '/upvote/upvote'=>'upvote#upvote'
   post '/upvote/upvote_answer'=>'upvote#upvote_answer'

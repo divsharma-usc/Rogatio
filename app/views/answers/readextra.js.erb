@@ -1,0 +1,5 @@
+console.log("hello");
+var el="#answertext"+<%=@ans_id%>
+console.log(el)
+$(el).empty();
+$(el).html("<%=@answertext.ans.html_safe%>")

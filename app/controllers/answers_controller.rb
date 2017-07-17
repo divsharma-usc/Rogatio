@@ -13,6 +13,15 @@ class AnswersController < ApplicationController
   def answers_show
     @answers=Answer.where(question_id:params["question_id"].to_i)
   end
+  def readextra
+       respond_to do |format|
+       format.html{}
+       format.js{
+         @ans_id=params["answer_id"]
+         @answertext=Answer.where(id:params["answer_id"].to_i).first
+        }
+     end
+  end
   def create
     @answer = Answer.new(answer_params)
     respond_to do |format|
@@ -33,6 +42,7 @@ class AnswersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -42,6 +52,6 @@ class AnswersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def answer_params
-      params.require(:answer).permit(:ans, :question_id,:user_id)
+      params.require(:answer).permit(:ans, :question_id,:user_id,:answer_id)
     end
 end

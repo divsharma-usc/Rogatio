@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :answers,only:[:create,:destroy,:ans]
+  resources :questions,only:[:create,:destroy]
   get 'answers/ans'
   resources :questions,only:[:create,:destroy]
   get 'home/index'
@@ -18,6 +19,8 @@ Rails.application.routes.draw do
   post '/answers/readextra'=>'answers#readextra'
   get '/answers/answers_show'=>'answers#answers_show'
   root to: "home#index"
+  get '/myquestions'=>"home#myquestions"
+  get '/myanswers'=>"home#myanswers"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

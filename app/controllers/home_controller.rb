@@ -82,5 +82,17 @@ class HomeController < ApplicationController
     }
   end
 end
+def myquestions
+  @questions=Question.where(user_id: current_user.id).order(updated_at: :DESC)
+  respond_to do |format|
+    format.js{}
+  end
+end
+def myanswers
+  @answers=Answer.where(user_id: current_user.id).order(updated_at: :DESC)
+  respond_to do |format|
+  format.js{}
+  end
+end
 
 end

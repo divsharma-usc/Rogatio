@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_question, only: [:show,:destroy]
 
   # POST /questions
   # POST /questions.json
@@ -23,7 +23,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     respond_to do |format|
-      format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }
+      format.html { redirect_to '/home/profile', notice: 'Question was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

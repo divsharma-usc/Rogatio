@@ -308,6 +308,14 @@
 
         
           }
+          a{
+               text-decoration:none;
+               color:#2b6dad;
+          }
+          a:hover{
+              background-color:#fff;
+              cursor:pointer;
+          }
           #footer{
           margin-top:10px;
                 a{ font-size:13px;

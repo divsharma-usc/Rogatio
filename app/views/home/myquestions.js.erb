@@ -1,0 +1,4 @@
+$('#loadoptions').empty();
+<%@questions.each do |question|%>
+$('#loadoptions').append("<%= escape_javascript (render 'profileelement',element: question)%>");
+<%end%>

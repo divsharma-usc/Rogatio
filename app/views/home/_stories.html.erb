@@ -23,7 +23,9 @@
    </div>
 <section id="answertext<%=answer.id%>">
 <%=raw answer.ans.truncate(250)%>
+<%if answer.ans.length>250%>
 <%=link_to "(more)",url_for(controller: :answers,action: :readextra,answer_id: answer.id),method: :post,remote: true%>
+<%end%>
 </section>
 <div id="bar"></div>
 <section id="footer">

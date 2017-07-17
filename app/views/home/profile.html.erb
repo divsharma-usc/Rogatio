@@ -5,9 +5,9 @@
   <%else%>
   <img src="/uploads/profiledefault.png">
   <%end%>
-<%= form_tag url_for(controller: :home,action: :upload_image),multipart: true do %>
-	<%= file_field_tag :image%><br>
-	<%= submit_tag%>
+  <%= form_tag url_for(controller: :home,action: :upload_image),multipart: true do %>
+  <%= file_field_tag :image%>
+	<%= submit_tag("Upload")%>
 <%end%>
   </div>
   <div  id="right">
@@ -15,3 +15,10 @@
     <h5><%=current_user.email%></h5>
   </div>
 </div>
+<section id="options">
+  <%=link_to "Questions", url_for(controller: :home,action: :myquestions),remote: true%>
+  <%=link_to "Answers", url_for(controller: :home,action: :myanswers),remote: true%>
+</section>
+<section id="loadoptions">
+  
+</section>

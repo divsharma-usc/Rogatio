@@ -1,0 +1,4 @@
+$('#loadoptions').empty();
+<%@answers.each do |answer|%>
+$('#loadoptions').append("<%= escape_javascript (render 'profileelementans',element: answer)%>");
+<%end%>

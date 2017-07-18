@@ -1,3 +1,9 @@
+<div id="questionlist">
+<div id="questiontext">
 <%=element.question%>
+</div>
+<div>
+<%= "Posted at "+time_ago_in_words(element.created_at)+" ago" %>
+</div>
 <%=link_to "Delete", url_for(controller: :questions,action: :destroy,id:element.id), method: :delete,id:"profile_#{element.id}"%>
-<br>
+</div>

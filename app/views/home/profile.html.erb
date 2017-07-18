@@ -12,10 +12,10 @@
   </div>
   <div  id="right">
     <h1><%=current_user.username%></h1>
-    <h5><%=current_user.email%></h5>
+    <h3><%=current_user.email%></h3>
   </div>
 </div>
-<section id="options">
+<section id="optionsprofile">
   <%=link_to "Questions", url_for(controller: :home,action: :myquestions),remote: true%>
   <%=link_to "Answers", url_for(controller: :home,action: :myanswers),remote: true%>
 </section>

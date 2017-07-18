@@ -14,7 +14,7 @@
 	   </span>
 	</div>
 	<div id="lower">
-	   	<%= link_to "Answer",controller: :answers,action: :ans,question: question.id,method: :post,remote: true,id: question.id%>
+	   	<%= link_to "Answer",url_for(controller: :answers,action: :ans,question: question.id),method: :post,remote: true,id: "linkanswer_#{question.id}"%>
 	   	<% if Upvote.where(upvoteable_id:question.id,upvoteable_type:"question",user_id:current_user.id).length>0%>
 	   	<%= link_to "DownVote | "+Upvote.where(upvoteable_id:question.id,upvoteable_type:"question").length.to_s, url_for(controller: :upvote,action: :upvote,question: question.id),    method: :post,remote: true,id: "button_#{question.id}"%>
 	   	<%else%>

@@ -22,3 +22,35 @@
 </div>
 <%end%>
 </div>
+<div id="topstories" style="margin-top: 140px">
+<% @topstories.each do | story|%>
+<%=render 'stories',answer:story%>
+<% end%>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+	window.question_load_more_active=false;
+	window.question_offset=5;
+	document.addEventListener('scroll',function(event){
+	   bh = document.body.offsetHeight;
+       wh = $(window).height();
+       scrollY = window.pageYOffset;
+       console.log(window.load_more_active)
+	   if(bh - wh +200 < scrollY && !window.question_load_more_active){
+	         	 window.question_load_more_active=true;
+	         	 console.log('question')
+	         	 console.log("sending ajax request")
+	             $.ajax({
+	                  url:'/topstories',
+	                  type:'GET',
+	                  dataType:'script',
+	                  data:{
+	                     offset:window.question_offset,
+	                     format:'js'
+	                  }
+	            });
+	   }
+	    
+	});
+});
+</script>

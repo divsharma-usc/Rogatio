@@ -1,7 +1,22 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!
   def index   
-        @question=Question.new
+       @question=Question.new
+       respond_to do |format|
+       format.html{
+       @topstories=Answer.all.order(upvotecount: :DESC).limit(5)
+       }
+       format.js{
+        offset=params[:offset]
+         if offset
+        offset=offset.to_i
+       else
+        offset=0
+        end
+        @newoffset=offset+5
+        @feed=Answer.all.order(upvotecount: :DESC).offset(offset).limit(5)
+      }
+    end
   end
   def profile
   end

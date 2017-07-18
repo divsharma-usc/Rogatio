@@ -1,2 +1,12 @@
+<div id="questionlist">
+<div id="questiontext">
+<%=element.question.question%>
+<p>
 <%=element.ans.html_safe%>
+</p>
+</div>
+<div>
+<%= "Posted at "+time_ago_in_words(element.created_at)+" ago" %>
+</div>
 <%=link_to "Delete", url_for(controller: :answers,action: :destroy,id:element.id), method: :delete%>
+</div>

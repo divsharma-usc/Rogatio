@@ -28,11 +28,12 @@
 <%end%>
 </section>
 <div id="bar"></div>
-<section id="footer">
+<section class="footer" id="footer<%=answer.id%>">
 	   	<% if Upvote.where(upvoteable_id:answer.id,upvoteable_type:"answer",user_id:current_user.id).length>0%>
 	   	<%= link_to "DownVote | "+answer.upvotecount.to_s, url_for(controller: :upvote,action: :upvote_answer,answer: answer.id),    method: :post,remote: true,id: "button_#{answer.id}"%>
 	   	<%else%>
 	   	<%= link_to "Upvote | "+answer.upvote.count.to_s, url_for(controller: :upvote,action: :upvote_answer,answer: answer.id),    method: :post,remote: true,id: "button_#{answer.id}"%>
 	   	<%end%>
+	   	<%= link_to "Comment | ",url_for(controller: :comments,action: :docomment,answerid: answer.id),method: :get,remote: true,id:"comment_#{answer.id}"%>
  </section>
 </div>

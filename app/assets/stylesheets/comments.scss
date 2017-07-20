@@ -1,0 +1,30 @@
+#commentsection{
+    margin-top: 10px;
+	img{
+	   width:23px;
+	   height:23px;
+	   border-radius:50%
+	}
+	display:flex;
+	align-items:center;
+	form{
+	   margin-left:8px;
+	   input[type="text"]{
+	          border:none;
+	          width:480px;
+	          border-bottom:2px solid #e2e2e2;
+	          padding:6px;
+	          color:black;
+	   }
+	   input[type="submit"]{
+	               font-size:15px;
+                   text-decoration:none;
+                   color:#2b6dad;
+                   padding:4px 8px 4px 8px;
+                   border-radius:2px;
+                   background-color:#f1f8fb;
+                   border:none;
+                   cursor:pointer;
+	   }
+	}
+}

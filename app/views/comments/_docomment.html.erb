@@ -1,0 +1,11 @@
+<div id="commentsection">
+  <% if current_user.profilepicture%>
+  <img src="/uploads/<%=current_user.profilepicture%>">
+  <%else%>
+  <img src="/uploads/profiledefault.png">
+  <%end%>
+  <%=form_tag(controller: "comments",action: "createcomment",method: "post") do%>
+  <%= text_field_tag(:comment)%>
+  <%= submit_tag("Add")%>
+  <%end%>
+</div>

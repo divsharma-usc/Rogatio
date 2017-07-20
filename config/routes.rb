@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   root to: "home#index"
   get '/myquestions'=>"home#myquestions"
   get '/myanswers'=>"home#myanswers"
+  get '/comments/docomment'=>'comments#docomment'
+  post 'comments/createcomment'=>'comments#createcomment'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

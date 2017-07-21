@@ -1,0 +1,18 @@
+<div id="comment">
+<section>
+<% if  comment.user.profilepicture%>
+  <img src="/uploads/<%=current_user.profilepicture%>">
+<%else%>
+  <img src="/uploads/profiledefault.png">
+<%end%>
+<content>
+<%=comment.user.username %>
+<span id="time">
+	   <%= time_ago_in_words(comment.created_at)+" ago" %>
+</span>
+</content>
+</section>
+<section id="comment_text">
+  <%=comment.content%>
+</section>
+</div>

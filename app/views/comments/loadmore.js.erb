@@ -1,0 +1,2 @@
+ $('comment_more<%=@answerid%>').remove();
+ $('#footer<%=@answerid%>').append("<%= escape_javascript (render 'showcomments',answerid: @answerid,comments: @comments,more: false)%>");

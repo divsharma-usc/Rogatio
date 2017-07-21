@@ -1,0 +1,40 @@
+assets pipeline
+rake assets:precompile
+user have donot access to acces files directly
+assets  url vs assets path
+if assets is going to use in some other website than use the assets url
+if the assets are going to use in the same server than use assets path
+
+Enum
+
+Roles of users
+1. admin
+2. normal user(member)
+3. moderator
+4. editor
+
+we add a column in the user and make enum
+
+0-normal
+1-moderator
+2-editor
+3-admin
+we are using numbers because it makes the searching fast
+
+rails built in enum functionality
+user.admin?
+user.admin!
+user.admin
+
+we ll prefer hash
+
+
+DB
+db n plus 1 problem
+eager fetching
+lazy loading
+
+So how to solve it
+we use here a function includes
+user.first.feed
+in the nested models we ll use includes to reduce the number of queries

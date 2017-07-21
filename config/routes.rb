@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   get '/myanswers'=>"home#myanswers"
   get '/comments/docomment'=>'comments#docomment'
   post 'comments/createcomment'=>'comments#createcomment'
+  get 'comments/showcomments'=>'comments#showcomments'
+  get 'comments/loadmore'=>'comments#loadmore'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -253,7 +253,7 @@
              padding:15px;
              border:1px solid #efefef;
              display:flex;
-             width:600px;
+             width:570px;
              height:content;
              min-height:80px;
              margin-top:10px;
@@ -322,7 +322,7 @@
               cursor:pointer;
           }
           .footer{
-          margin-top:10px;
+              margin-top:10px;
                 a{ font-size:13px;
                    text-decoration:none;
                    color:#2b6dad;
@@ -332,6 +332,14 @@
                 }
                 a:hover{
                     border:1px solid #2b6dad;
+                }
+                a[id="comment_more"]{
+                   margin-top:10px;
+                   font-size:13px;
+                   text-decoration:none;
+                   color:#2b6dad;
+                   background:transparent;
+                   border:none;
                 }
                 span[id="upvote"]{
                 font-family: 'q_serif',Georgia,Times,"Times New Roman",serif;

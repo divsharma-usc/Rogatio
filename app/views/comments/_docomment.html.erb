@@ -5,6 +5,7 @@
   <img src="/uploads/profiledefault.png">
   <%end%>
   <%=form_tag(controller: "comments",action: "createcomment",method: "post") do%>
+  <%= hidden_field_tag(:answer_id,answerid)%>
   <%= text_field_tag(:comment)%>
   <%= submit_tag("Add")%>
   <%end%>

@@ -2,5 +2,7 @@
 <%= render 'comment',comment: comment%>
 <%end%>
 <% if more%>
+<div id="loadmoreblock<%=comments.first.answer_id%>">
 <%= link_to "view more",url_for(controller: :comments,action: :loadmore,answerid: @answerid),remote: true,method: :get,id: "comment_more#{comments.first.answer_id}"%> 
+</div>
 <%end%>

@@ -24,8 +24,9 @@ class AnswersController < ApplicationController
   end
   def create
     @answer = Answer.new(answer_params)
-    respond_to do |format|
+        respond_to do |format|
       if @answer.save
+        Answerme.answer_me(@answer.question.user).deliver
         format.html { redirect_to '/newquestions', notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @answer }
       else

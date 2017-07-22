@@ -13,12 +13,12 @@
 <body>
 <%if notice%>
 <script type="text/javascript">
-		noty({text:'<%=notice%>',layout:'topCenter',type:'information',theme:'defaultTheme'});
+		noty({text:'<%=notice%>',layout:'topCenter',type:'information', timeout: 200,progressBar: true,closeWith: 'hover'});
 	</script>
 <%end%>
 <% if alert%>
 <script type="text/javascript">
-		noty({text:'<%=alert%>',layout:'topCenter',type:'error'});
+		noty({text:'<%=alert%>',layout:'topCenter',type:'error', timeout: 200,progressBar:true});
 </script>
 <%end%>
 <% if user_signed_in?%>

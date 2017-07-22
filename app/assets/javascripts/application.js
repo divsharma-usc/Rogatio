@@ -16,5 +16,3 @@
 //= require jquery.noty.packaged.min.js
 //= require_tree .
 //= require trix
-
- 

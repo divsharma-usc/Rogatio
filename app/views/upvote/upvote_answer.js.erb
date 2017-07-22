@@ -1,9 +1,9 @@
 var el="#button_"+<%=@answer_id%>
 <% if @is_upvoted %>
- $(el).html("Downvote | "+<%=Upvote.where(upvoteable_id:@anwer_id,upvoteable_type:"answer").length.to_s%>);
+ $(el).html("Downvote | "+<%=Answer.where(id:@answer_id).first.upvotecount%>);
  noty({text: 'Answer upvoted', type: 'alert'});
  <% else %>
- $(el).html("Upvote | "+<%=Upvote.where(upvoteable_id:@answer_id,upvoteable_type:"answer").length.to_s%>);
+ $(el).html("Upvote | "+<%=Answer.where(id:@answer_id).first.upvotecount%>);
  noty({text: 'Answer downvoted', type: 'alert'});
  <% end %> 
  

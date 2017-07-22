@@ -1,0 +1,7 @@
+var element='#answer'+<%=@getquestionid%>
+var count="#answercount_"+<%=@getquestionid%>
+var buttonids="#linkanswer_"+<%=@getquestionid%>
+$(element).remove();
+$(count).text('<%=Answer.where(question_id:@getquestionid).length%> Answers');
+$(buttonids).unbind('click',false);
+

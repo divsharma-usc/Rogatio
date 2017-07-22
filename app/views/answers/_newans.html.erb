@@ -1,4 +1,4 @@
-<div id="answer">
+<div id="answer<%=questionid%>" class="answer">
 <section id="header">
   <% if current_user.profilepicture%>
   <img src="/uploads/<%=current_user.profilepicture%>">
@@ -7,7 +7,7 @@
   <%end%>
   <p> <%= current_user.username%></p>
 </section>
-<%= form_for @answer=Answer.new do |f|%>
+<%= form_for @answer=Answer.new,remote: true,:html=>{id:"newans_#{questionid}"} do |f|%>
 <%=f.hidden_field :question_id,value:questionid %>
 <%=f.hidden_field :user_id, value: current_user.id.to_s %>
 <%=f.trix_editor :ans%>

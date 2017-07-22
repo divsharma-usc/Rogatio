@@ -1,15 +1,11 @@
 // Place all the styles related to the answers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#answer{
-    margin-top:20px;
-	width:480px;
-	button[type="button"]{
-	  width:25px;
-	  height:25px;
-	}
+.answer{
+  margin-top:20px;
+	width:630px;
 	#header{
-	  width:460px;
+	  width:595px;
 	  display:flex;
 	  background-color:#f6f6f6;
 	  padding:10px;
@@ -27,10 +23,17 @@
 	  }
 	}
 	form{
+     .button_row{
+       width:580px;
+         button{
+           width:20px;
+    }
+  }
+     width:615px;
 	   border:1px solid #e2e2e2;
 	   border-radius:3px;
 	   trix-editor{
-	      margin-top:-9px;
+	        margin-top:-9px;
           min-height:150px;
 	   }
 	   div[class="actions"]{
@@ -142,7 +145,7 @@
                    }
             }
             #answer_text{
-                width:470px;
+                width:570px;
                 padding:5px;
                 display:block;
                 div{

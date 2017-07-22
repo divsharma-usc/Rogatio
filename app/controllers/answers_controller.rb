@@ -23,15 +23,18 @@ class AnswersController < ApplicationController
      end
   end
   def create
-    @answer = Answer.new(answer_params)
+      @answer = Answer.new(answer_params)
         respond_to do |format|
       if @answer.save
-        Answerme.answer_me(@answer.question.user).deliver
         format.html { redirect_to '/newquestions', notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @answer }
+        format.js{ 
+           @getquestionid=answer_params["question_id"].to_i
+        }
       else
         format.html { render :new }
         format.json { render json: @answer.errors, status: :unprocessable_entity }
+        
       end
     end
   end

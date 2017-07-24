@@ -10,8 +10,8 @@
   <%= submit_tag("Add")%>
   <%end%>
 </div>
-<div id="show_comments<%=@answerid%>">
+<div id="show_comments_id<%=answerid%>">
 </div>
 <div id="loadmoreblock<%=answerid%>">
-<%= link_to "view comment",url_for(controller: :comments,action: :loadmore,answerid: @answerid,offset:0),remote: true,id: "comment_more#{answerid}"%> 
+<%= link_to "view comment",url_for(controller: :comments,action: :loadmore,answerid: @answerid,offset:2),remote: true,id: "comment_more#{answerid}"%> 
 </div>

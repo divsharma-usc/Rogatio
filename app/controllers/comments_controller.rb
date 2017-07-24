@@ -19,7 +19,8 @@ class CommentsController < ApplicationController
       @offset=params["offset"].to_i
       @comments=Comment.where(answer_id: params["answerid"].to_i).offset(@offset).limit(10);
       @answerid=params["answerid"].to_i
-      if @offset >= Comment.where(answer_id: @answerid).length
+      @length=Comment.where(answer_id: @answerid).length
+      if @offset+10 >= @length
          @ifmore=false
       else
          @ifmore=true

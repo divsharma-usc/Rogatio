@@ -1,7 +1,7 @@
 <div id="comment">
 <section>
 <% if  comment.user.profilepicture%>
-  <img src="/uploads/<%=current_user.profilepicture%>">
+  <img src="/uploads/<%=comment.user.profilepicture%>">
 <%else%>
   <img src="/uploads/profiledefault.png">
 <%end%>

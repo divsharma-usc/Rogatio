@@ -25,5 +25,5 @@
 	   	<%else%>
 	   	<%= link_to "Upvote | "+Upvote.where(upvoteable_id:answer.id,upvoteable_type:"answer").length.to_s, url_for(controller: :upvote,action: :upvote_answer,answer: answer.id),    method: :post,remote: true,id: "button_#{answer.id}"%>
 	   	<%end%>
-        </section>
+ </section>
 </div>

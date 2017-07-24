@@ -16,8 +16,14 @@ class CommentsController < ApplicationController
   	  comment.save!
   end
   def loadmore
-      @comments=Comment.where(answer_id: params["answerid"].to_i).offset(2)
+      @offset=params["offset"].to_i
+      @comments=Comment.where(answer_id: params["answerid"].to_i).offset(@offset).limit(10);
       @answerid=params["answerid"].to_i
+      if @offset >= Comment.where(answer_id: @answerid).length
+         @ifmore=false
+      else
+         @ifmore=true
+      end
       respond_to do |format|
         format.js{}
       end

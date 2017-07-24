@@ -1,2 +1,4 @@
- $('#loadmoreblock<%=@answerid%>').empty();
- $('#footer<%=@answerid%>').append("<%= escape_javascript (render 'showcomments',answerid: @answerid,comments: @comments,more: false)%>");
+ $('#comment_more<%=@answerid%>').attr('href',"/comments/loadmore?answerid=<%=@answerid%>&offset=<%=@offset+10%>");
+ $('#show_comments<%=@answerid%>').append("<%= escape_javascript (render 'showcomments',answerid: @answerid,comments: @comments,more: @ifmore)%>");
+
+  

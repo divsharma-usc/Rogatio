@@ -1,7 +1,6 @@
 
 $('#footer<%=@answerid%>').append("<%= escape_javascript (render 'docomment',answerid: @answerid)%>");
-<%if Comment.where(answer_id: @answerid.to_i).length>0 %>
-   <%@comments=Comment.where(answer_id:@answerid.to_i).limit(2)%>
+<%if @more %>
    $('#show_comments_id<%=@answerid%>').append("<%= escape_javascript (render 'showcomments',answerid: @answerid,comments: @comments,more: @more)%>");
 <%end%>
 $('#comment_<%=@answerid%>').bind('click',false);

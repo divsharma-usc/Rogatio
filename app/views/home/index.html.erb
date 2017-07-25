@@ -15,7 +15,7 @@
 <h5><%=current_user.username%></h5>
 </div>
 <%=form_for @question,remote:true do |f|%>
-<%=f.text_area :question, placehodler:"What is yours question"%><br>
+<%=f.text_area :question, placeholder: "What is yours Question?"%><br>
 <div class="action">
 <%=f.submit id:'create_question_submit',value:"Add"%>
 </div>

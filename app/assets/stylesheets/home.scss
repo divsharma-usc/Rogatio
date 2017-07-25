@@ -64,7 +64,7 @@
 	  padding-bottom:4px;
 	  color:#666;
 	  font-weight: 400;
-      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	}
 	a:hover{
       background-color:#fafafa;
@@ -323,17 +323,17 @@
           }
           .footer{
               margin-top:10px;
-                a{ font-size:13px;
+                a:not(.more_comment){ font-size:13px;
                    text-decoration:none;
                    color:#2b6dad;
                    padding:2px 6px 2px 6px;
                    border-radius:2px;
                    background-color:#f1f8fb;
                 }
-                a:hover{
+                a:hover:not(.more_comment){
                     border:1px solid #2b6dad;
                 }
-                a[id="comment_more"]{
+                a[class="more_commemt"]{
                    margin-top:10px;
                    font-size:13px;
                    text-decoration:none;

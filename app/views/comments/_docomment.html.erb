@@ -12,6 +12,8 @@
 </div>
 <div id="show_comments_id<%=answerid%>">
 </div>
-<div id="loadmoreblock<%=answerid%>">
-<%= link_to "view comment",url_for(controller: :comments,action: :loadmore,answerid: @answerid,offset:2),remote: true,id: "comment_more#{answerid}"%> 
+<% if Comment.where(answer_id:answerid).length>0%>
+<div id="loadmoreblock<%=answerid%>" class="more_comments">
+<%= link_to "view more",url_for(controller: :comments,action: :loadmore,answerid: @answerid,offset:2),remote: true,id: "comment_more#{answerid}",class: "more_comment"%> 
 </div>
+<%end%>
